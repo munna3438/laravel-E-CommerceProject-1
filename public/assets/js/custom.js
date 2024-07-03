@@ -7,7 +7,6 @@ function getYear() {
 
 getYear();
 
-
 // client section owl carousel
 $(".client_owl-carousel").owlCarousel({
     loop: true,
@@ -19,22 +18,20 @@ $(".client_owl-carousel").owlCarousel({
     autoplayHoverPause: true,
     navText: [
         '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-        '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+        '<i class="fa fa-angle-right" aria-hidden="true"></i>',
     ],
     responsive: {
         0: {
-            items: 1
+            items: 1,
         },
         768: {
-            items: 2
+            items: 2,
         },
         1000: {
-            items: 2
-        }
-    }
+            items: 2,
+        },
+    },
 });
-
-
 
 /** google_map js **/
 function myMap() {
@@ -42,5 +39,8 @@ function myMap() {
         center: new google.maps.LatLng(40.712775, -74.005973),
         zoom: 18,
     };
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    var map = new google.maps.Map(
+        document.getElementById("googleMap"),
+        mapProp
+    );
 }

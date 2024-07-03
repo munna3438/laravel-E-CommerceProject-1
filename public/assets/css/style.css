@@ -3,6 +3,22 @@
 * {
     box-sizing: border-box;
 }
+:root {
+    --primary-color: #f7444e;
+    --secondary-color: #002c3e;
+}
+.bg_primary {
+    background-color: var(--primary-color);
+}
+.text_primary {
+    background-color: var(--primary-color);
+}
+.bg_secondary {
+    background-color: var(--primary-color);
+}
+.text_secondary {
+    background-color: var(--primary-color);
+}
 body {
     font-family: "Montserrat", sans-serif;
     color: #0c0c0c;

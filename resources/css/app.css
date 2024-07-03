@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .bg_primary {
+        background-color: var(--primary-color);
+    }
+    .text_primary {
+        color: var(--primary-color);
+    }
+    .bg_secondary {
+        background-color: var(--secondary-color);
+    }
+    .text_secondary {
+        color: var(--secondary-color);
+    }
+    .border_primary {
+        border-color: var(--primary-color);
+    }
+    .border_secondary {
+        border-color: var(--secondary-color);
+    }
+    .bg_overlay {
+        background-color: var(--primary-bOverlay-color);
+    }
+    .admin_sidebar {
+        @apply h-full flex flex-col justify-between relative;
+    }
+    .sidebar_logo {
+        @apply h-[58px] w-full  p-3 flex justify-center items-center z-10 sticky top-0 left-0 bg_primary border-b;
+    }
+    .sidebar_link {
+        @apply w-full block p-3 hover:bg_overlay border-b  text-white transition duration-300;
+    }
+    .sidebar_link.active {
+        @apply bg_overlay;
+    }
+    .dropdown_inner {
+        @apply bg_overlay w-[96%] ml-auto;
+    }
+    .sidebar_setings {
+        @apply border-t;
+    }
+}
