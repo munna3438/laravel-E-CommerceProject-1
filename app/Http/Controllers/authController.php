@@ -14,18 +14,12 @@ class authController extends Controller
         }
         return redirect()->route('user.dashboard');
     }
-    public function catagory()
-    {
-        return view('admin.catagory');
-    }
-
     protected function adminDashboard()
     {
-        return view('admin.admin-dashboard');
+        return view('layouts.admin.admin');
     }
-
     protected function userDashboard()
     {
-        return view('admin.user-dashboard');
+        return view('layouts.user.user');
     }
 }

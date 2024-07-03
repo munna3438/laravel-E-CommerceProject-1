@@ -1,0 +1,36 @@
+:root {
+    --primary-color: #f7444e;
+    --primary-light-color: #fa5b63;
+    --primary-bOverlay-color: #ffffff24;
+
+    --secondary-color: #002c3e;
+}
+.bg_primary {
+    background-color: var(--primary-color);
+}
+.text_primary {
+    background-color: var(--primary-color);
+}
+.bg_secondary {
+    background-color: var(--secondary-color);
+}
+.text_secondary {
+    background-color: var(--secondary-color);
+}
+.tst_shadow {
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 -2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.m_shadow {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+.d_container {
+    width: 93%;
+    margin: 0 auto;
+}
+
+/* dropdown */
+
+.dropdown_inner {
+    display: none;
+}
