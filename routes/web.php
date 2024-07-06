@@ -32,3 +32,5 @@ Route::middleware([
     Route::get('/user/dashboard', [authController::class, 'userDashboard'])->name('user.dashboard');
 });
 Route::get('/catagory', [authController::class, 'catagory'])->middleware(['auth', 'admin'])->name('dashboard');
+Route::Post('/add-catagory', [authController::class, 'addCatagory'])->middleware(['auth', 'admin'])->name('add.catagory');
+Route::Post('/list-catagory', [authController::class, 'listCatagory'])->middleware(['auth', 'admin'])->name('add.catagory');
