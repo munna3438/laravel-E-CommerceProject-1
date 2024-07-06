@@ -22,4 +22,16 @@ class authController extends Controller
     {
         return view('layouts.user.user');
     }
+    public function add_catagory()
+    {
+        return view('admin.catagory.add_catagory');
+    }
+    public function list_catagory()
+    {
+        return view('admin.catagory.list_catagory');
+    }
+    public function edit_catagory()
+    {
+        return view('admin.catagory.edit_catagory');
+    }
 }
