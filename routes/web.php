@@ -38,4 +38,5 @@ Route::prefix('catagory')->group(function () {
     Route::get('/list', [authController::class, 'list_catagory'])->middleware(['auth', 'admin'])->name('list.catagory');
     Route::get('/edit/{id}', [authController::class, 'edit_catagory'])->middleware(['auth', 'admin'])->name('edit.catagory');
     Route::post('/update/{id}', [authController::class, 'update_catagory'])->middleware(['auth', 'admin'])->name('update.catagory');
+    Route::get('/delete/{id}',[authController::class, 'delete_catagory'])->middleware(['auth', 'admin'])->name('delete.catagory');
 });

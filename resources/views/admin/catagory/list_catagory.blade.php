@@ -6,9 +6,13 @@
 
         <div class="d_container_box">
             <h1 class="d_sec_title">Catagory List</h1>
+
             @if (Session::has('msg'))
-                <p class="bg-green-400 w-full py-3 px-4 rounded-md text-white mb-5">{{ Session::get('msg') }}</p>
-            @endif
+            <div class="d_success_message">
+                        <p class="">{{ Session::get('msg') }}</p>
+                        <button type="button" class="hide_area"><i class="fa-solid fa-x"></i></button>
+                    </div>
+                @endif
             <div>
                 <table>
                     <thead>
@@ -29,7 +33,7 @@
 
                                         <i class="fa-regular fa-pen-to-square"></i>
                                     </a>
-                                    <a href="#" class="d_action_button bg_primary hover:bg_primary_light">
+                                    <a href="{{route('delete.catagory',$catagory->id)}}" onclick="return confirm('Are you sure delete catagory?')" class="d_action_button bg_primary hover:bg_primary_light">
 
                                         <i class="fa-regular fa-trash-can"></i>
                                     </a>

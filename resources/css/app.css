@@ -56,7 +56,7 @@
         @apply block mb-2 text-[#333];
     }
     .d_input_field {
-        @apply focus:outline-none focus:ring-0 border-gray-400 focus:border_primary valid:border_primary w-full rounded-md;
+        @apply focus:outline-none focus:ring-0 border-gray-400 focus:border_primary  w-full rounded-md;
     }
     .d_button {
         @apply bg_primary text-white px-4 py-2 rounded-md active:scale-90 hover:bg_primary_light;
@@ -69,5 +69,8 @@
     }
     .d_action_container {
         @apply flex gap-2 justify-center;
+    }
+    .d_success_message {
+        @apply bg-green-400 w-full py-3 px-4 rounded-md text-white mb-5 flex justify-between;
     }
 }

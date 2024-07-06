@@ -16,7 +16,11 @@
                     </div>
                 @endif
                 @if (Session::has('msg'))
-                    <p class="bg-green-400 w-full py-3 px-4 rounded-md text-white mb-5">{{ Session::get('msg') }}</p>
+                    <div class="d_success_message">
+
+                        <p class="">{{ Session::get('msg') }}</p>
+                        <button type="button" class="hide_area"><i class="fa-solid fa-x"></i></button>
+                    </div>
                 @endif
                 <form action="{{ route('store.catagory') }}" method="POST" enctype="multipart/form-data">
                     @csrf

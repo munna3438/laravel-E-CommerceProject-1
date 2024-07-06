@@ -37,7 +37,7 @@ class authController extends Controller
         catagory::create([
             'catagoryName' => $request->catagoryName
         ]);
-        return Redirect::back()->with('msg', 'product add successfully');
+        return Redirect::back()->with('msg', 'Catagory add successfully');
     }
     public function list_catagory()
     {
@@ -59,6 +59,10 @@ class authController extends Controller
         catagory::find($id)->update([
             'catagoryName' => $request->catagoryName
         ]);
-        return Redirect::route('list.catagory')->with('msg', 'product update successfully');
+        return Redirect::route('list.catagory')->with('msg', 'Catagory update successfully');
+    }
+    public function delete_catagory($id){
+        catagory::find($id)->delete();
+        return Redirect::back()->with('msg','Catagory deleted successfully');
     }
 }

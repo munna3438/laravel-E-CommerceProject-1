@@ -60,3 +60,6 @@ td {
     text-align: center;
     padding: 0.8rem;
 }
+.d_input_field:not(:placeholder-shown) {
+    border-color: var(--primary-color);
+}
