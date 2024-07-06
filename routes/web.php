@@ -31,6 +31,9 @@ Route::middleware([
     Route::get('/admin/dashboard', [authController::class, 'adminDashboard'])->name('admin.dashboard');
     Route::get('/user/dashboard', [authController::class, 'userDashboard'])->name('user.dashboard');
 });
-Route::get('/catagory', [authController::class, 'catagory'])->middleware(['auth', 'admin'])->name('dashboard');
-Route::Post('/add-catagory', [authController::class, 'addCatagory'])->middleware(['auth', 'admin'])->name('add.catagory');
-Route::Post('/list-catagory', [authController::class, 'listCatagory'])->middleware(['auth', 'admin'])->name('add.catagory');
+
+Route::prefix('catagory')->group(function () {
+    Route::get('/add', [authController::class, 'add_catagory'])->middleware(['auth', 'admin'])->name('add.catagory');
+    Route::get('/list', [authController::class, 'list_catagory'])->middleware(['auth', 'admin'])->name('list.catagory');
+    Route::get('/edit', [authController::class, 'edit_catagory'])->middleware(['auth', 'admin'])->name('edit.catagory');
+});

@@ -1,7 +1,7 @@
 <header>
     <div class="bg-white shadow-md ">
         <div class="d_container">
-            <div class="flex justify-between py-3 align-items-center">
+            <div class="flex justify-between  align-items-center">
                 <div>
                     <span>dashboard</span>
                 </div>
