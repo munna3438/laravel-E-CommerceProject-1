@@ -3,12 +3,13 @@
     --primary-light-color: #fa5b63;
     --primary-bOverlay-color: #ffffff24;
     --secondary-color: #002c3e;
+    --secondary-light-color: #004d6c;
 }
 .bg_primary {
     background-color: var(--primary-color);
 }
 .text_primary {
-    background-color: var(--primary-color);
+    color: var(--primary-color);
 }
 .bg_secondary {
     background-color: var(--secondary-color);
@@ -45,4 +46,17 @@
     width: 70px;
     height: 2px;
     background-color: var(--primary-color);
+}
+
+table {
+    width: 100%;
+}
+th {
+    text-wrap: nowrap;
+}
+th,
+td {
+    border: 1px solid #002c3e;
+    text-align: center;
+    padding: 0.8rem;
 }

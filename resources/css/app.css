@@ -15,6 +15,9 @@
     .bg_secondary {
         background-color: var(--secondary-color);
     }
+    .bg_secondary_light {
+        background-color: var(--secondary-light-color);
+    }
     .text_secondary {
         color: var(--secondary-color);
     }
@@ -47,7 +50,7 @@
     }
     .d_container {
         /* @apply w-[97%] md:w-[93%] 2xl:w-[90%] mx-auto; */
-        @apply px-5 py-4;
+        @apply p-5;
     }
     .d_label {
         @apply block mb-2 text-[#333];
@@ -57,5 +60,14 @@
     }
     .d_button {
         @apply bg_primary text-white px-4 py-2 rounded-md active:scale-90 hover:bg_primary_light;
+    }
+    .d_container_box {
+        @apply bg-white rounded-md p-8;
+    }
+    .d_action_button {
+        @apply rounded-md text-white h-[40px] w-[40px] flex justify-center items-center;
+    }
+    .d_action_container {
+        @apply flex gap-2 justify-center;
     }
 }
