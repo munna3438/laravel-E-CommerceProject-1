@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\authController;
+use App\Http\Controllers\catagoryController;
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\productController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,10 +35,18 @@ Route::middleware([
 });
 
 Route::prefix('catagory')->group(function () {
-    Route::get('/add', [authController::class, 'add_catagory'])->middleware(['auth', 'admin'])->name('add.catagory');
-    Route::post('/store', [authController::class, 'store_catagory'])->middleware(['auth', 'admin'])->name('store.catagory');
-    Route::get('/list', [authController::class, 'list_catagory'])->middleware(['auth', 'admin'])->name('list.catagory');
-    Route::get('/edit/{id}', [authController::class, 'edit_catagory'])->middleware(['auth', 'admin'])->name('edit.catagory');
-    Route::post('/update/{id}', [authController::class, 'update_catagory'])->middleware(['auth', 'admin'])->name('update.catagory');
-    Route::get('/delete/{id}',[authController::class, 'delete_catagory'])->middleware(['auth', 'admin'])->name('delete.catagory');
+    Route::get('/add', [catagoryController::class, 'add_catagory'])->middleware(['auth', 'admin'])->name('add.catagory');
+    Route::post('/store', [catagoryController::class, 'store_catagory'])->middleware(['auth', 'admin'])->name('store.catagory');
+    Route::get('/list', [catagoryController::class, 'list_catagory'])->middleware(['auth', 'admin'])->name('list.catagory');
+    Route::get('/edit/{id}', [catagoryController::class, 'edit_catagory'])->middleware(['auth', 'admin'])->name('edit.catagory');
+    Route::post('/update/{id}', [catagoryController::class, 'update_catagory'])->middleware(['auth', 'admin'])->name('update.catagory');
+    Route::get('/delete/{id}',[catagoryController::class, 'delete_catagory'])->middleware(['auth', 'admin'])->name('delete.catagory');
+});
+Route::prefix('product')->group(function () {
+    Route::get('/add', [productController::class, 'add_product'])->middleware(['auth', 'admin'])->name('add.product');
+    // Route::post('/store', [catagoryController::class, 'store_catagory'])->middleware(['auth', 'admin'])->name('store.catagory');
+    // Route::get('/list', [catagoryController::class, 'list_catagory'])->middleware(['auth', 'admin'])->name('list.catagory');
+    // Route::get('/edit/{id}', [catagoryController::class, 'edit_catagory'])->middleware(['auth', 'admin'])->name('edit.catagory');
+    // Route::post('/update/{id}', [catagoryController::class, 'update_catagory'])->middleware(['auth', 'admin'])->name('update.catagory');
+    // Route::get('/delete/{id}',[catagoryController::class, 'delete_catagory'])->middleware(['auth', 'admin'])->name('delete.catagory');
 });
