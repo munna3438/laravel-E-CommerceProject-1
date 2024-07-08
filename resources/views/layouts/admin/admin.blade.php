@@ -43,6 +43,10 @@
                                     {{-- <a href="{{ route('list.product') }}" class="sidebar_link">Catagory List</a> --}}
                                 </div>
                             </div>
+                            <div class="accordion">
+                                <div class="sidebar_link  dropdown_head ">Product</div>
+
+                            </div>
                         </div>
                     </div>
                     <div class="sidebar_link sidebar_setings">
