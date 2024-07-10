@@ -44,7 +44,7 @@ Route::prefix('catagory')->group(function () {
 });
 Route::prefix('product')->group(function () {
     Route::get('/add', [productController::class, 'add_product'])->middleware(['auth', 'admin'])->name('add.product');
-    // Route::post('/store', [catagoryController::class, 'store_catagory'])->middleware(['auth', 'admin'])->name('store.catagory');
+    Route::post('/store', [productController::class, 'store_catagory'])->middleware(['auth', 'admin'])->name('store.product');
     // Route::get('/list', [catagoryController::class, 'list_catagory'])->middleware(['auth', 'admin'])->name('list.catagory');
     // Route::get('/edit/{id}', [catagoryController::class, 'edit_catagory'])->middleware(['auth', 'admin'])->name('edit.catagory');
     // Route::post('/update/{id}', [catagoryController::class, 'update_catagory'])->middleware(['auth', 'admin'])->name('update.catagory');

@@ -1,10 +1,12 @@
 @extends('layouts.admin.admin')
+
 @section('style')
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
 @endsection
 @section('content')
     <div class="d_container">
         <div class="d_container_box">
-            <h1 class="d_sec_title"> Add New Catagory </h1>
+            <h1 class="d_sec_title"> Add New Product </h1>
             <div>
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -22,19 +24,54 @@
                         <button type="button" class="hide_area"><i class="fa-solid fa-x"></i></button>
                     </div>
                 @endif
-                <form action="{{ route('store.catagory') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('store.product')}}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="flex gap-3 items-end">
+                    <div class="grid grid-cols-1 md:grid-cols-3 x gap-3">
 
-                        <div class="w-1/2">
-                            <label for="catagoryName" class="d_label">Catagory Name <span
-                                    class="text-red-500">*</span></label>
-                            <input type="text" name="catagoryName" id="catagoryName" class="d_input_field"
-                                placeholder="Enter Catagory Name">
-                        </div>
                         <div>
-                            <button type="submit" class="d_button">Add Catagory</button>
+                            <label for="productName" class="d_label">Product Name <span
+                                    class="text-red-500">*</span></label>
+                            <input type="text" name="productName" id="productName" class="d_input_field"
+                                placeholder="Enter Product Name">
                         </div>
+                        <div >
+                            <label for="productName" class="d_label">Product Catagory <span
+                                    class="text-red-500">*</span></label>
+                            <input type="text" name="productCatagory" id="productCatagory" class="d_input_field"
+                                placeholder="Enter Product Name">
+                        </div>
+                        <div >
+                            <label for="productName" class="d_label">Product Image <span
+                                    class="text-red-500">*</span></label>
+                            <input type="file" name="productImage" id="productImage" class="d_input_field"
+                                placeholder="Enter Product Name">
+                        </div>
+                        <div >
+                            <label for="productName" class="d_label">Product Quantity <span
+                                    class="text-red-500">*</span></label>
+                            <input type="text" name="productQuantity" id="productQuantity" class="d_input_field"
+                                placeholder="Enter Product Name">
+                        </div>
+                        <div >
+                            <label for="productName" class="d_label">Product Regular Price <span
+                                    class="text-red-500">*</span></label>
+                            <input type="text" name="productRegularPrice" id="productRegularPrice" class="d_input_field"
+                                placeholder="Enter Product Name">
+                        </div>
+                        <div >
+                            <label for="productName" class="d_label">Product Discount Price <span
+                                    class="text-red-500">*</span></label>
+                            <input type="text" name="productDiscountPrice" id="productDiscountPrice" class="d_input_field"
+                                placeholder="Enter Product Name">
+                        </div>
+                    </div>
+                    <div class="my-4">
+                        <label for="productDescription" class="d_label">Product Description <span class="text-red-500">*</span></label>
+                        <input id="productDescription" type="hidden" name="productDescription">
+                        <trix-editor input="productDescription"></trix-editor>
+                    </div>
+                    <div class="flex items-end">
+                        <button type="submit" class="d_button ">Add Product</button>
                     </div>
                 </form>
             </div>
@@ -43,4 +80,5 @@
     </div>
 @endsection
 @section('script')
+<script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
 @endsection

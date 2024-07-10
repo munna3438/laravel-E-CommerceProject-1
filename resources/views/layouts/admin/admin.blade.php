@@ -39,13 +39,9 @@
                             <div class="accordion">
                                 <div class="sidebar_link  dropdown_head ">Product</div>
                                 <div class="dropdown_inner ">
-                                    <a href="{{ route('add.product') }}" class="sidebar_link">New Catagory</a>
-                                    {{-- <a href="{{ route('list.product') }}" class="sidebar_link">Catagory List</a> --}}
+                                    <a href="{{ route('add.product') }}" class="sidebar_link">New Prodduct</a>
+                                    {{-- <a href="{{ route('list.product') }}" class="sidebar_link">Prodduct List</a> --}}
                                 </div>
-                            </div>
-                            <div class="accordion">
-                                <div class="sidebar_link  dropdown_head ">Product</div>
-
                             </div>
                         </div>
                     </div>
