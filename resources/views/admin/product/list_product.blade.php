@@ -33,7 +33,8 @@
                                 <td>{{ $product->id }}</td>
                                 <td>{{ $product->title }}</td>
                                 <td>{{ strip_tags($product->description) }}</td>
-                                <td>{{ $product->image }}</td>
+                                <td><img src="{{ asset('upload/product-image/' . $product->image) }}"
+                                        alt="{{ $product->title }}"></td>
                                 <td>{{ $product->catagory }}</td>
                                 <td>{{ $product->quantity }}</td>
                                 <td>{{ $product->price }}</td>

@@ -17,16 +17,19 @@ class productController extends Controller
         $request->validate([
             'productName' => 'required',
             'productDescription' => 'required',
-            'productImage' => 'nullable',
+            'productImage' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'productCatagory' => 'required',
             'productQuantity' => 'numeric|required',
             'productRegularPrice' => 'required',
             'productDiscountPrice' => 'string'
         ]);
+        $imageName = time() . uniqid() . '.' . $request->productImage->extension();
+        $request->productImage->move(public_path('upload/product-image'), $imageName);
+
         Product::create([
             'title' => $request->productName,
             'description' => $request->productDescription,
-            'image' => $request->productImage,
+            'image' => $imageName,
             'catagory' => $request->productCatagory,
             'quantity' => $request->productQuantity,
             'price' => $request->productRegularPrice,
