@@ -8,36 +8,36 @@
             <h1 class="d_sec_title">Catagory List</h1>
 
             @if (Session::has('msg'))
-            <div class="d_success_message">
-                        <p class="">{{ Session::get('msg') }}</p>
-                        <button type="button" class="hide_area"><i class="fa-solid fa-x"></i></button>
-                    </div>
-                @endif
+                <div class="d_success_message">
+                    <p class="">{{ Session::get('msg') }}</p>
+                    <button type="button" class="hide_area"><i class="fa-solid fa-x"></i></button>
+                </div>
+            @endif
             <div>
                 <table>
                     <thead>
                         <tr>
                             <th>Sl. No</th>
                             <th>Name</th>
-                            <th>Action</th>
+                            <th>description</th>
+                            <th>image</th>
+                            <th>catagory</th>
+                            <th>quantity</th>
+                            <th>price</th>
+                            <th>discount_price</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($catagorys as $catagory)
+                        @foreach ($products as $product)
                             <tr>
-                                <td>{{ $catagory->id }}</td>
-                                <td>{{ $catagory->catagoryName }}</td>
-                                <td class="d_action_container">
-                                    <a href="{{ route('edit.catagory', $catagory->id) }}"
-                                        class="d_action_button  bg_secondary hover:bg_secondary_light">
-
-                                        <i class="fa-regular fa-pen-to-square"></i>
-                                    </a>
-                                    <a href="{{route('delete.catagory',$catagory->id)}}" onclick="return confirm('Are you sure delete catagory?')" class="d_action_button bg_primary hover:bg_primary_light">
-
-                                        <i class="fa-regular fa-trash-can"></i>
-                                    </a>
-                                </td>
+                                <td>{{ $product->id }}</td>
+                                <td>{{ $product->title }}</td>
+                                <td>{{ strip_tags($product->description) }}</td>
+                                <td>{{ $product->image }}</td>
+                                <td>{{ $product->catagory }}</td>
+                                <td>{{ $product->quantity }}</td>
+                                <td>{{ $product->price }}</td>
+                                <td>{{ $product->discount_price }}</td>
                             </tr>
                         @endforeach
                     </tbody>

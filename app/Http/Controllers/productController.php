@@ -8,18 +8,20 @@ use Illuminate\Support\Facades\Redirect;
 
 class productController extends Controller
 {
-    public function add_product(){
+    public function add_product()
+    {
         return view('admin.product.add_product');
     }
-    public function store_catagory(Request $request){
+    public function store_product(Request $request)
+    {
         $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'image' => 'nullable',
-            'catagory' => 'required',
-            'quantity' => '[numeric]required',
-            'price' => 'required',
-            'discount_price' => 'string'
+            'productName' => 'required',
+            'productDescription' => 'required',
+            'productImage' => 'nullable',
+            'productCatagory' => 'required',
+            'productQuantity' => 'numeric|required',
+            'productRegularPrice' => 'required',
+            'productDiscountPrice' => 'string'
         ]);
         Product::create([
             'title' => $request->productName,
@@ -31,5 +33,11 @@ class productController extends Controller
             'discount_price' => $request->productDiscountPrice
         ]);
         return Redirect::back()->with('msg', 'Product add successfully');
+    }
+    public function list_product()
+    {
+        $products = Product::all();
+
+        return view('admin.product.list_product', compact('products'));
     }
 }
