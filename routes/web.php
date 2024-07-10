@@ -46,7 +46,7 @@ Route::prefix('product')->group(function () {
     Route::get('/add', [productController::class, 'add_product'])->middleware(['auth', 'admin'])->name('add.product');
     Route::post('/store', [productController::class, 'store_product'])->middleware(['auth', 'admin'])->name('store.product');
     Route::get('/list', [productController::class, 'list_product'])->middleware(['auth', 'admin'])->name('list.product');
-    // Route::get('/edit/{id}', [productController::class, 'edit_product'])->middleware(['auth', 'admin'])->name('edit.product');
-    // Route::post('/update/{id}', [productController::class, 'update_product'])->middleware(['auth', 'admin'])->name('update.product');
-    // Route::get('/delete/{id}',[productController::class, 'delete_product'])->middleware(['auth', 'admin'])->name('delete.product');
+    Route::get('/edit/{id}', [productController::class, 'edit_product'])->middleware(['auth', 'admin'])->name('edit.product');
+    Route::post('/update/{id}', [productController::class, 'update_product'])->middleware(['auth', 'admin'])->name('update.product');
+    Route::get('/delete/{id}',[productController::class, 'delete_product'])->middleware(['auth', 'admin'])->name('delete.product');
 });

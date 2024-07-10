@@ -19,12 +19,10 @@
                         <tr>
                             <th>Sl. No</th>
                             <th>Name</th>
-                            <th>description</th>
                             <th>image</th>
                             <th>catagory</th>
                             <th>quantity</th>
-                            <th>price</th>
-                            <th>discount_price</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,13 +30,24 @@
                             <tr>
                                 <td>{{ $product->id }}</td>
                                 <td>{{ $product->title }}</td>
-                                <td>{{ strip_tags($product->description) }}</td>
-                                <td><img src="{{ asset('upload/product-image/' . $product->image) }}"
+                                <td><img class="w-[80px] h-auto" src="{{ asset('upload/product-image/' . $product->image) }}"
                                         alt="{{ $product->title }}"></td>
                                 <td>{{ $product->catagory }}</td>
                                 <td>{{ $product->quantity }}</td>
-                                <td>{{ $product->price }}</td>
-                                <td>{{ $product->discount_price }}</td>
+                                <td >
+                                    <div class="d_action_container">
+
+                                        <a href="{{ route('edit.product', $product->id) }}"
+                                            class="d_action_button  bg_secondary hover:bg_secondary_light">
+
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </a>
+                                        <a href="{{route('delete.product',$product->id)}}" onclick="return confirm('Are you sure delete catagory?')" class="d_action_button bg_primary hover:bg_primary_light">
+
+                                            <i class="fa-regular fa-trash-can"></i>
+                                        </a>
+                                    </div>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

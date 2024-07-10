@@ -1,7 +1,6 @@
 @extends('layouts.admin.admin')
 
 @section('style')
-<link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
 @endsection
 @section('content')
     <div class="d_container">
@@ -66,7 +65,7 @@
                         </div>
                     </div>
                     <div class="my-4">
-                        <label for="productDescription" class="d_label">Product Description <span class="text-red-500">*</span></label>
+                        <label for="productDescription" class="d_label">Product Description </label>
                         <input id="productDescription" type="hidden" name="productDescription">
                         <trix-editor input="productDescription"></trix-editor>
                     </div>
@@ -80,5 +79,5 @@
     </div>
 @endsection
 @section('script')
-<script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
+
 @endsection
