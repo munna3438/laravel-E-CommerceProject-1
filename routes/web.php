@@ -23,6 +23,7 @@ Route::get('/testimonial', [homeController::class, 'testimonial'])->name('testim
 Route::get('/products', [homeController::class, 'products'])->name('products');
 Route::get('/blog', [homeController::class, 'blog'])->name('blog');
 Route::get('/contact', [homeController::class, 'contact'])->name('contact');
+Route::get('/product/details/{id}', [homeController::class, 'product_details'])->name('product.details');
 
 Route::middleware([
     'auth:sanctum',
