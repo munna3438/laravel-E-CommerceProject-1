@@ -34,31 +34,31 @@
                                 placeholder="Enter Product Name">
                         </div>
                         <div >
-                            <label for="productName" class="d_label">Product Catagory <span
+                            <label for="productCatagory" class="d_label">Product Catagory <span
                                     class="text-red-500">*</span></label>
                             <input type="text" name="productCatagory" id="productCatagory" class="d_input_field"
                                 placeholder="Enter Product Name">
                         </div>
                         <div >
-                            <label for="productName" class="d_label">Product Image <span
+                            <label for="productImage" class="d_label">Product Image <span
                                     class="text-red-500">*</span></label>
                             <input type="file" name="productImage" id="productImage" class="d_input_field"
                                 placeholder="Enter Product Name">
                         </div>
                         <div >
-                            <label for="productName" class="d_label">Product Quantity <span
+                            <label for="productQuantity" class="d_label">Product Quantity <span
                                     class="text-red-500">*</span></label>
                             <input type="text" name="productQuantity" id="productQuantity" class="d_input_field"
                                 placeholder="Enter Product Name">
                         </div>
                         <div >
-                            <label for="productName" class="d_label">Product Regular Price <span
+                            <label for="productRegularPrice" class="d_label">Product Regular Price <span
                                     class="text-red-500">*</span></label>
                             <input type="text" name="productRegularPrice" id="productRegularPrice" class="d_input_field"
                                 placeholder="Enter Product Name">
                         </div>
                         <div >
-                            <label for="productName" class="d_label">Product Discount Price <span
+                            <label for="productDiscountPrice" class="d_label">Product Discount Price <span
                                     class="text-red-500">*</span></label>
                             <input type="text" name="productDiscountPrice" id="productDiscountPrice" class="d_input_field"
                                 placeholder="Enter Product Name">
