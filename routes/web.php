@@ -24,6 +24,8 @@ Route::get('/products', [homeController::class, 'products'])->name('products');
 Route::get('/blog', [homeController::class, 'blog'])->name('blog');
 Route::get('/contact', [homeController::class, 'contact'])->name('contact');
 Route::get('/product/details/{id}', [homeController::class, 'product_details'])->name('product.details');
+Route::get('/cart/{id}', [homeController::class, 'cart'])->name('cart');
+Route::get('/checkout', [homeController::class, 'checkout'])->name('checkout');
 
 Route::middleware([
     'auth:sanctum',
@@ -49,5 +51,5 @@ Route::prefix('product')->group(function () {
     Route::get('/list', [productController::class, 'list_product'])->middleware(['auth', 'admin'])->name('list.product');
     Route::get('/edit/{id}', [productController::class, 'edit_product'])->middleware(['auth', 'admin'])->name('edit.product');
     Route::post('/update/{id}', [productController::class, 'update_product'])->middleware(['auth', 'admin'])->name('update.product');
-    Route::get('/delete/{id}',[productController::class, 'delete_product'])->middleware(['auth', 'admin'])->name('delete.product');
+    Route::get('/delete/{id}', [productController::class, 'delete_product'])->middleware(['auth', 'admin'])->name('delete.product');
 });
