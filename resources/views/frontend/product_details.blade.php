@@ -16,7 +16,7 @@
                             <span>{{ $product->discount_percentage }}%</span>
                         </div>
                     @else
-                        <p class="text-red-500">৳ {{ $product->price }}</p>
+                        <p class="text-red-500 text-2xl font-bold">৳ {{ $product->price }}</p>
                     @endif
                     @if ($product->quantity > 0)
                         <p class="text-green-500">In Stock</p>
