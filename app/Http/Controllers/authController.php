@@ -19,7 +19,7 @@ class authController extends Controller
     }
     protected function userDashboard()
     {
-        return view('layouts.user.user');
+        return view('layouts.users.user');
     }
 
 }

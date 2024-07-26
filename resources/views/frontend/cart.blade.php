@@ -37,11 +37,8 @@
                             <input type="number" id="quantity" name="quantity" value="1" min="1">
                         </td>
                         <td>৳
-                            @if ($product->discount_price)
-                                <span id="total-price">{{ $product->discount_price }}</span>
-                            @else
                                 <span id="total-price">{{ $product->price }}</span>
-                            @endif
+
                         </td>
                         </td>
                         <td class="">
@@ -65,11 +62,7 @@
     <script>
         function total_price() {
             let quantity = $("#quantity").val()
-            @if ($product->discount_price)
-                let total_price = quantity * {{ $product->discount_price }}
-            @else
-                let total_price = quantity * {{ $product->price }}
-            @endif
+            let total_price = quantity * {{ $product->price }}
             $('#total-price').text(total_price)
         }
         $('#quantity').keyup(function() {

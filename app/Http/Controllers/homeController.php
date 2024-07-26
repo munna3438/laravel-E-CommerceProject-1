@@ -31,9 +31,16 @@ class homeController extends Controller
     }
     public function cart(Request $request, $id)
     {
-        $product = Product::find($id);
+        if(auth()->user()){
+            $product = Product::find($id);
+            if($product->discount_price!==null){
+                $product->price=$product->discount_price;
+            }
 
-        return view('frontend.cart', compact('product'));
+            return view('frontend.cart', compact('product'));
+        }else{
+            return redirect()->route('login');
+        }
     }
     public function checkout()
     {

@@ -28,7 +28,9 @@ class productController extends Controller
         $request->productImage->move(public_path('upload/product-image'), $imageName);
         if ($request->productDiscountPrice) {
 
-            $discountPercentag = (($request->productRegularPrice - $request->productDiscountPrice) / $request->productRegularPrice) * 100;
+            $discountPercentag = round((($request->productRegularPrice - $request->productDiscountPrice) / $request->productRegularPrice) * 100);
+        }else{
+            $discountPercentag=null;
         }
 
         Product::create([
@@ -62,7 +64,7 @@ class productController extends Controller
             'productImage' => 'nullable|image|mimes:png,jpg,jpeg,svg,webp',
             'productQuantity' => 'required',
             'productRegularPrice' => 'numeric|required',
-            'productDiscountPrice' => 'numeric|nullable',
+            'productDiscountPrice' => 'numeric|nullable|min:0|lt:productRegularPrice',
             'productDescription' => 'nullable|string',
         ]);
         $oldImage = public_path('upload/product-image/' . $product->image);
@@ -77,7 +79,7 @@ class productController extends Controller
         }
         if ($request->productDiscountPrice) {
 
-            $discountPercentag = (($request->productRegularPrice - $request->productDiscountPrice) / $request->productRegularPrice) * 100;
+            $discountPercentag = round((($request->productRegularPrice - $request->productDiscountPrice) / $request->productRegularPrice) * 100);
         } else {
             $discountPercentag = null;
         }

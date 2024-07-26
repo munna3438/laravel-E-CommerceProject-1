@@ -28,6 +28,7 @@
         <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
         <script src="{{ asset('assets/js/custom.js') }}"></script>
         @yield('scripts')
+        @livewireScripts
     </body>
 
 </html>
