@@ -21,37 +21,52 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><img class="w-[80px] mx-auto" src="{{ asset('upload/product-image/' . $product->image) }}"
-                                alt="{{ $product->image }}">
-                        </td>
-                        <td>{{ $product->title }}</td>
-                        <td>
-                            @if ($product->discount_price)
-                                <p class="">৳ {{ $product->discount_price }}</p>
-                            @else
-                                <p class="">৳ {{ $product->price }}</p>
-                            @endif
-                        </td>
-                        <td>
-                            <input type="number" id="quantity" name="quantity" value="1" min="1">
-                        </td>
-                        <td>৳
-                                <span id="total-price">{{ $product->price }}</span>
+                    @foreach ($carts as $cart)
+                        <form action="{{ route('cart.update', [$cart->productId, $cart->userId]) }}"
+                            enctype="multipart/form-data">
+                            @csrf
+                            <tr>
 
-                        </td>
-                        </td>
-                        <td class="">
-                            <a href="#" onclick="return confirm('Are you sure delete catagory?')" class="">
-                                <i class="fa-regular fa-trash-can"></i>
-                            </a>
-                        </td>
-                    </tr>
+                                <td><img class="w-[80px] mx-auto"
+                                        src="{{ asset('upload/product-image/' . $cart->productImage) }}"
+                                        alt="{{ $cart->productImage }}">
+                                </td>
+                                <td>{{ $cart->productName }}</td>
+                                <td>
+                                    ৳
+                                    <p class="">{{ $cart->productPrice }}</p>
+                                </td>
+                                <td>
+
+                                    <input type="number" class="quantity" name="quantity"
+                                        value="{{ $cart->productQuantity }}" min="1">
+
+                                    <button type="submit" class="bg-green-400 text-white py-[.6rem] px-[1rem]"><i
+                                            class="fa-solid fa-check"></i></button>
+                                </td>
+                                <td>৳
+                                    <span class="total-price">{{ $cart->productPrice * $cart->productQuantity }}</span>
+
+                                </td>
+                                </td>
+                                <td class="">
+                                    <a href="#" onclick="return confirm('Are you sure delete catagory?')"
+                                        class="">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </form>
+                    @endforeach
                 </tbody>
                 <tfoot>
                     <tr>
                         <td colspan="4">Sub Total = </td>
-                        <td colspan="2">৳ 00</td>
+                        <td colspan="2">৳
+                            <span id="subTotal">
+
+                            </span>
+                        </td>
                     </tr>
                 </tfoot>
             </table>
@@ -60,16 +75,30 @@
 @endsection
 @section('scripts')
     <script>
-        function total_price() {
-            let quantity = $("#quantity").val()
-            let total_price = quantity * {{ $product->price }}
-            $('#total-price').text(total_price)
+        function total_price(current) {
+
+            let quantity = current.val()
+            let price = current.parent().prev().children().text()
+            let total_price = quantity * price
+            current.parent().next().children().text(total_price)
         }
-        $('#quantity').keyup(function() {
-            total_price()
-        });
-        $('#quantity').change(function() {
-            total_price()
+        //sub total
+        function sub_total() {
+            let subTotal = 0
+            $('.total-price').each(function() {
+                subTotal += parseInt($(this).text())
+            })
+            $('#subTotal').text(subTotal)
+        }
+        $('.quantity').change(function() {
+            total_price($(this))
+            sub_total()
         })
+        $('.quantity').keyup(function() {
+
+            total_price($(this))
+            sub_total()
+        })
+        sub_total()
     </script>
 @endsection

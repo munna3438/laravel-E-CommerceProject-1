@@ -24,7 +24,6 @@ Route::get('/products', [homeController::class, 'products'])->name('products');
 Route::get('/blog', [homeController::class, 'blog'])->name('blog');
 Route::get('/contact', [homeController::class, 'contact'])->name('contact');
 Route::get('/product/details/{id}', [homeController::class, 'product_details'])->name('product.details');
-Route::get('/cart/{id}', [homeController::class, 'cart'])->name('cart');
 Route::get('/checkout', [homeController::class, 'checkout'])->name('checkout');
 
 Route::middleware([
@@ -52,4 +51,10 @@ Route::prefix('product')->group(function () {
     Route::get('/edit/{id}', [productController::class, 'edit_product'])->middleware(['auth', 'admin'])->name('edit.product');
     Route::post('/update/{id}', [productController::class, 'update_product'])->middleware(['auth', 'admin'])->name('update.product');
     Route::get('/delete/{id}', [productController::class, 'delete_product'])->middleware(['auth', 'admin'])->name('delete.product');
+});
+
+Route::prefix('cart')->group(function () {
+    Route::get('/', [homeController::class, 'cart'])->name('cart');
+    Route::get('store/{id}', [homeController::class, 'cart_store'])->name('cart.store');
+    Route::get('update/{pId}/{uId}', [homeController::class, 'cart_update'])->name('cart.update');
 });
