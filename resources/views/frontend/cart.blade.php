@@ -50,7 +50,7 @@
                                 </td>
                                 </td>
                                 <td class="">
-                                    <a href="#" onclick="return confirm('Are you sure delete catagory?')"
+                                    <a href="{{route('delete.cart',[$cart->userId,$cart->productId])}}" onclick="return confirm('Are you sure delete catagory?')"
                                         class="">
                                         <i class="fa-regular fa-trash-can"></i>
                                     </a>

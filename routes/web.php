@@ -57,4 +57,5 @@ Route::prefix('cart')->group(function () {
     Route::get('/', [homeController::class, 'cart'])->name('cart');
     Route::get('store/{id}', [homeController::class, 'cart_store'])->name('cart.store');
     Route::get('update/{pId}/{uId}', [homeController::class, 'cart_update'])->name('cart.update');
+    Route::get('delete/{uId}/{pId}',[homeController::class,'delete_cart'])->name('delete.cart');
 });

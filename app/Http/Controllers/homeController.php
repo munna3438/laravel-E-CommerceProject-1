@@ -74,6 +74,11 @@ class homeController extends Controller
         ]);
         return back();
     }
+    public function delete_cart($uId,$pId){
+        Cart::where('userId',$uId)->where('productId',$pId)->delete();
+        return back();
+
+    }
     public function checkout()
     {
         return view('frontend.checkout');
