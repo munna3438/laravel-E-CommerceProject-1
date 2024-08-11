@@ -75,15 +75,17 @@ class homeController extends Controller
         ]);
         return back();
     }
-    public function delete_cart($uId,$pId){
-        Cart::where('userId',$uId)->where('productId',$pId)->delete();
+    public function delete_cart($uId, $pId)
+    {
+        Cart::where('userId', $uId)->where('productId', $pId)->delete();
         return back();
-
     }
     public function checkout()
     {
-        $cart = Cart::where('userId', auth()->user()->id)->first();
-        return view('frontend.checkout', compact('cart'));
+        $carts = Cart::where("userId", auth()->user()->id)->get();
+        $userInfo = Cart::where("userId", auth()->user()->id)->first();
+
+        return view('frontend.checkout', compact('carts', 'userInfo'));
     }
     public function blog()
     {
