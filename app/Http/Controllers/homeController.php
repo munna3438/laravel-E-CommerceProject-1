@@ -84,8 +84,12 @@ class homeController extends Controller
     {
         $carts = Cart::where("userId", auth()->user()->id)->get();
         $userInfo = Cart::where("userId", auth()->user()->id)->first();
+        $totalPrice = 0;
+        foreach($carts as $cart){
+            $totalPrice +=$cart->productPrice*$cart->productQuantity;
+        }
 
-        return view('frontend.checkout', compact('carts', 'userInfo'));
+        return view('frontend.checkout', compact('carts', 'userInfo','totalPrice'));
     }
     public function blog()
     {

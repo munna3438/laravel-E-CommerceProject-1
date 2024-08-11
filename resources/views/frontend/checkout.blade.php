@@ -46,8 +46,9 @@
                 <h3 class="font-bold text_primary text-xl mb-4">
                     Billing Details
                 </h3>
+                <div class="border-b border-[#555] pb-4">
                 @foreach ($carts as $cart)
-                    <div class="flex  gap-3 justify-between">
+                    <div class="flex  gap-3 justify-between mb-3">
                         <div class="flex gap-3">
 
                             <div class="w-[100px]">
@@ -55,16 +56,24 @@
                             </div>
                             <div>
 
-                                <h3>{{ $cart->productName }}</h3>
+                                <h3 class="font-semibold text-xl">{{ $cart->productName }}</h3>
                                 <p>* {{ $cart->productQuantity }}</p>
                             </div>
                         </div>
                         <div class="text-right">
                             <p> {{ $cart->productPrice * $cart->productQuantity }} TK</p>
                         </div>
-
                     </div>
                 @endforeach
+                </div>
+                <div class="border-b border-[#555] py-4 flex justify-between">
+                    <div>
+                        <h3 class="font-semibold text-xl">sub Total</h3>
+                    </div>
+                    <div>
+                        <p>{{$totalPrice}} TK</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
