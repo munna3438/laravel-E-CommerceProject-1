@@ -75,6 +75,11 @@ class homeController extends Controller
         ]);
         return back();
     }
+    public function delete_cart($uId,$pId){
+        Cart::where('userId',$uId)->where('productId',$pId)->delete();
+        return back();
+
+    }
     public function checkout()
     {
         $cart = Cart::where('userId', auth()->user()->id)->first();
