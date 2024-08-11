@@ -71,6 +71,11 @@
                 </tfoot>
             </table>
         </div>
+        <div class="mt-6 text-right">
+            <a href="{{ route('checkout') }}" class="bg_primary text-white py-[.6rem] px-[1rem] inline-block">Checkout</a>
+            <a href="{{ route('home') }}" class="bg_primary text-white py-[.6rem] px-[1rem] inline-block">continue
+                shoping</a>
+        </div>
     </section>
 @endsection
 @section('scripts')

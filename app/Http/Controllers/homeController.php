@@ -51,6 +51,7 @@ class homeController extends Controller
             } else {
                 Cart::create([
                     'userId' => auth()->user()->id,
+                    'userName' => auth()->user()->name,
                     'email' => auth()->user()->email,
                     'phone' => auth()->user()->phone,
                     'address' => auth()->user()->address,
@@ -76,7 +77,8 @@ class homeController extends Controller
     }
     public function checkout()
     {
-        return view('frontend.checkout');
+        $cart = Cart::where('userId', auth()->user()->id)->first();
+        return view('frontend.checkout', compact('cart'));
     }
     public function blog()
     {
