@@ -85,11 +85,22 @@ class homeController extends Controller
         $carts = Cart::where("userId", auth()->user()->id)->get();
         $userInfo = Cart::where("userId", auth()->user()->id)->first();
         $totalPrice = 0;
-        foreach($carts as $cart){
-            $totalPrice +=$cart->productPrice*$cart->productQuantity;
+        foreach ($carts as $cart) {
+            $totalPrice += $cart->productPrice * $cart->productQuantity;
         }
 
-        return view('frontend.checkout', compact('carts', 'userInfo','totalPrice'));
+        return view('frontend.checkout', compact('carts', 'userInfo', 'totalPrice'));
+    }
+    public function order_store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required|min:11',
+            'address' => 'required',
+            'paymentMethod' => 'required',
+        ]);
+        dd($request->all());
     }
     public function blog()
     {

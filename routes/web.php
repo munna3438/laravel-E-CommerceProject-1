@@ -26,6 +26,7 @@ Route::get('/contact', [homeController::class, 'contact'])->name('contact');
 Route::get('/product/details/{id}', [homeController::class, 'product_details'])->name('product.details');
 Route::get('/checkout', [homeController::class, 'checkout'])->name('checkout');
 
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -57,5 +58,11 @@ Route::prefix('cart')->group(function () {
     Route::get('/', [homeController::class, 'cart'])->name('cart');
     Route::get('store/{id}', [homeController::class, 'cart_store'])->name('cart.store');
     Route::get('update/{pId}/{uId}', [homeController::class, 'cart_update'])->name('cart.update');
-    Route::get('delete/{uId}/{pId}',[homeController::class,'delete_cart'])->name('delete.cart');
+    Route::get('delete/{uId}/{pId}', [homeController::class, 'delete_cart'])->name('delete.cart');
+});
+
+Route::prefix('order')->group(function () {
+    // Route::get('/', [homeController::class, 'order'])->name('order');
+    Route::post('store', [homeController::class, 'order_store'])->name('order.store');
+    // Route::get('delete/{id}', [homeController::class, 'order_delete'])->name('order.delete');
 });
