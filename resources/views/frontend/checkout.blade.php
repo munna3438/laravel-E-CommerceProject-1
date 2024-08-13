@@ -75,7 +75,7 @@
                     </div>
                     <div class="border-b border-[#555] py-4">
                         <div class="flex gap-2">
-                            <input type="radio" name="paymentMethod" id="cashPayment" value="cashPayment">
+                            <input type="radio" name="paymentMethod" checked id="cashPayment" value="cashPayment">
                             <label for="cashPayment" class="leading-none">Cash On Delivery</label>
                         </div>
                         <div class="flex gap-2">
