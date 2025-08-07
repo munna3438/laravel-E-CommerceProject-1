@@ -78,10 +78,10 @@
                             <input type="radio" name="paymentMethod" checked id="cashPayment" value="cashPayment">
                             <label for="cashPayment" class="leading-none">Cash On Delivery</label>
                         </div>
-                        <div class="flex gap-2">
+                        {{-- <div class="flex gap-2">
                             <input type="radio" name="paymentMethod" id="onlinePayment" value="onlinePayment">
                             <label for="onlinePayment" class="leading-none">Online Payment</label>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="py-4 text-right">
                         <button type="submit" class="py-2 px-3 bg_primary text-white hover:bg-red-500">Checkout</button>
