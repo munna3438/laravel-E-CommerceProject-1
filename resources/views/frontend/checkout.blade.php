@@ -46,6 +46,8 @@
                     </h3>
                     <div class="border-b border-[#555] pb-4">
                         @foreach ($carts as $cart)
+                            <input type="text" hidden name="product_id[]" value="{{$cart->productId}}">
+                            <input type="text" hidden name="product_quantity[]" value="{{$cart->productQuantity}}">
                             <div class="flex  gap-3 justify-between mb-3">
                                 <div class="flex gap-3">
 

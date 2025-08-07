@@ -41,8 +41,11 @@
                                     <input type="number" class="quantity" name="quantity"
                                         value="{{ $cart->productQuantity }}" min="1">
 
-                                    <button type="submit" class="bg-green-400 text-white py-[.6rem] px-[1rem]"><i
-                                            class="fa-solid fa-check"></i></button>
+                                    <button type="submit" class="bg-green-400 text-white py-[.6rem] px-[1rem]">
+                                        {{-- <i class="fa-solid fa-check"></i> --}}
+                                        add
+
+                                    </button>
                                 </td>
                                 <td>৳
                                     <span class="total-price">{{ $cart->productPrice * $cart->productQuantity }}</span>
@@ -51,8 +54,9 @@
                                 </td>
                                 <td class="">
                                     <a href="{{route('delete.cart',[$cart->userId,$cart->productId])}}" onclick="return confirm('Are you sure delete catagory?')"
-                                        class="">
-                                        <i class="fa-regular fa-trash-can"></i>
+                                        class="bg-red-600 px-2 py-1 text-white">
+                                        {{-- <i class="fa-regular fa-trash-can"></i> --}}
+                                        remove
                                     </a>
                                 </td>
                             </tr>

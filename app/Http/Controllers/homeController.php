@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Product;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class homeController extends Controller
 {
@@ -100,7 +102,17 @@ class homeController extends Controller
             'address' => 'required',
             'paymentMethod' => 'required',
         ]);
-        dd($request->all());
+        DB::beginTransaction();
+        try {
+            $products = $request->product_id;
+            Cart::whereIn('productId',$products)->where('userId',auth()->user()->id)->delete();
+            DB::commit();
+            dd('successfully order submited!');
+        } catch (Exception $e) {
+            DB::rollBack();
+            dd($e);
+        }
+
     }
     public function blog()
     {
