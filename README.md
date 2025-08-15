@@ -12,7 +12,8 @@
 1. **Clone the Repository**
    ```
    git clone https://github.com/your-username/your-laravel-project.git
-   cd your-laravel-project```
+   cd your-laravel-project
+   ```
 2. **Install PHP Dependencies**
    ```
    composer install
