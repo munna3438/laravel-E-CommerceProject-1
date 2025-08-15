@@ -26,7 +26,9 @@
     ```
     cp .env.example .env
     ```
--Update the .env file with your database and other configuration settings.
+
+Update the .env file with your database and other configuration settings.
+
 5. **Generate Application Key**
     ```
     php artisan key:generate
@@ -42,4 +44,5 @@
     ```
 ## 🔑 Admin Dashboard Login
 Email: `admin@munna.com`
+
 Password: `12345600`
