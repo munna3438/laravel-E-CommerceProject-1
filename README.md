@@ -47,3 +47,11 @@ Update the .env file with your database and other configuration settings.
 Email: `admin@munna.com`
 
 Password: `12345600`
+
+
+## presentation link:
+[click heare](https://docs.google.com/presentation/d/1SdWM8wYo9EBbIbDW6sAq8Ja8lL7fShoY2wfyOwjdHyM/edit?slide=id.g375e51682dc_2_101#slide=id.g375e51682dc_2_101)
+
+## live demo
+[click here](https://nbrtest.alhadiexpress.com.bd/)
+
